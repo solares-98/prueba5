@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación a la Boda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lancelot&family=Josefin+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/normailize.css">
+</head>
+<body>
+    <header class="header">
+        <div class="overlay">
+            <h1>Alejandra & Roberto</h1>
+            <p>24-Mayo-2025</p>
+            <p>Faltan:</p>
+            <div id="countdown"></div>
+        </div>
+    </header>
+    <main class="lugar">
+        <h1>Estás invitado.</h1>
+        <p class="frase">En la sinfonía de nuestra vida, el día de nuestra boda es el acorde más dulce. 
+            Te invitamos a ser testigo de nuestro 'sí quiero'.</p>
+        <section class="itinerario">
+        <h1>Itinerario de la boda.</h1>
+            <div class="card">
+                <div class="face front">
+                    <img src="images/parroquia.jpg" alt="Parroquia del Sagrado Corazon de Jesus">
+                    <h2>Parroquia del Sagrado Corazón de Jesús.</h2>
+                </div>
+                <div class="face back"><a href="https://maps.app.goo.gl/AgaiWkcJ1P2nD9dH6" target="_blank">
+                    <h2>Parroquia del Sagrado Corazón de Jesús.</h2>
+                    <p>Calle Gil Preciado NO.11, Zona Centro, Tecolotlán Jal. Haz click aquí para ver como llegar.</p>
+                    <h3>Ceremonia religiosa: 1:00 PM</h3>
+                    <img src="images/ceremonia-ico.png" alt="Ceremonia-ico">
+                </a></div>
+            </div>
+            <div class="card card1">
+                <div class="face front">
+                  <img src="images/salon.jpg" alt="Salon las Palmas.">
+                  <h2>Terraza las palmas.</h2>  
+                </div>
+                <div class="face back"><a href="https://maps.app.goo.gl/bAaQr3DbbY8hxtPM8" target="_blank">
+                    <h2>Terraza las palmas.</h2>
+                    <p>Calle Roble NO.28, Tecolotlán Jal. Haz click aquí para ver como llegar.</p>
+                    <h3>Recepción en el salón: 3:00 PM</h3>
+                    <img  src="images/recepcion-ico.png" alt="Recepción-ico">
+                    <h3>Fotos con los invitados: 4:00 PM</h3>
+                    <img src="images/camara-ico.png" alt="camara-ico">
+                    <h3>Comida: 4:30 PM</h3>
+                    <img src="images/comida-ico.png" alt="comida-ico">
+                    <h3>DJ: 5:00 PM</h3>
+                    <img src="images/DJ-ico.png" alt="DJ-ico">
+                </a></div>
+            </div>
+        </section>
+        <section class="codigoVestimenta">
+            <h1>Código de vestimenta.</h1>
+            <h2>Semiformal.</h2>
+            <div class="iconosCodigoVestimenta">
+                <img src="images/gentleman.png" alt="imagen gentleman">
+                <img src="images/lady.png" alt="imagen lady">
+            </div>
+            <p>No utilizar color blanco, terracota, ivory, perla, rojo. </p>
+        </section>
+    </main>
+    <footer>
+        <h2>Confirma tu Asistencia</h2>
+        <form class="formulario" id="rsvp-form" action="/submit" method="POST">
+            <label for="name">Tu Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Tu Correo:</label>
+            <input type="text" id="name" name="email" required>
+            <label for="phone">Número de Teléfono:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <label for="children">¿Llevarás niños? ¿Cuántos?</label>
+            <input type="number" id="children" name="children" min="0">
+            <button type="submit">Enviar</button>
+        </form>
+    </footer>
+    <script>
+        // Cuenta regresiva hasta la fecha de la boda (24 de Mayo de 2024)
+        const countDownDate = new Date("May 24, 2025 14:00:00").getTime();
+        const countdown = document.getElementById("countdown");
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            countdown.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                countdown.innerHTML = "¡La boda ha comenzado!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

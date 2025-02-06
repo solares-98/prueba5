@@ -1,0 +1,278 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Josefin Slab', serif; /* Fuente secundaria */
+    color: #333c54;  /* Color del texto */
+    background-color: #f5f3ef; /* Color de fondo */
+}
+.header {
+    background-image: url('../images/A&R.jpeg'); /* Cambia esta URL a la imagen de fondo deseada */
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: #333c54;
+}
+
+.overlay {
+    background-color: rgba(23, 27, 37, 0.5); /* Color de fondo con transparencia */
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+}
+h1 {
+    font-family: 'Lancelot', serif; /* Fuente principal */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+@media(min-width:600px)
+{
+    .overlay{
+        font-size: 2rem;
+    }
+    h1{
+        font-size: 3rem;
+    }
+}
+#countdown {
+    font-size: 1.5em;
+}
+main {
+    padding: 20px;
+    background-image: url('../images/img4.jpg');
+}
+
+.frase{
+    text-align: center;
+    font-size: 20px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.itinerario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card{
+    position: relative;
+    width: 300px;
+    height: 450px;
+    margin-bottom: 5px;
+}
+
+.card1{
+    width:300px;
+    height:400px;
+}
+
+@media(min-width:600px){
+    .card{
+        position: relative;
+        width: 500px;
+        height: 350px;
+        margin-bottom: 5px;
+    }
+    
+    .card1{
+        width:500px;
+        height:400px;
+    }
+
+}
+
+.card .face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front{
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card .front h2{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 30px;
+    color: #f5f3ef;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+}
+
+@media(min-width:600px)
+{
+    .card .front h2{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 45px;
+        line-height: 45px;
+        color: #f5f3ef;
+        background: rgba(0, 0, 0, .4);
+        text-align: center;
+    }
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: #f5f3ef;
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back p{
+    letter-spacing: 1px;
+    font-size: 18px;
+}
+
+.card:hover .front{
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back{
+    transform: perspective(600px) rotateY(360deg);
+}
+
+.card .back h3{
+    border-top: solid 1px;
+}
+
+.card .back img{
+    width: 3rem;
+    height: 3rem;
+    align-items: center;
+}
+
+.codigoVestimenta{
+    text-align: center;
+}
+
+.codigoVestimenta p{
+    font-size: 25px;
+}
+
+footer {
+    background-color: #ae7350; /* Color de fondo del footer */
+    padding: 20px;
+    text-align: center;
+}
+footer h2 {
+    color: #f4d4b7; /* Color del texto en el footer */
+}
+
+.formulario{
+  
+ background-color: #f4d4b7;
+    width: min(60rem, 100%); /*utilizar el valor mas pequeño*/
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.iconosCodigoVestimenta{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+@media(min-width:600px) {
+    .iconosCodigoVestimenta{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 40%;
+        margin-right: 40%;
+    }
+}
+
+.iconosCodigoVestimenta img{
+    height: 70px;
+    width: 70px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+form input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border: 1px solid #333c54; /* Borde del campo de entrada */
+    border-radius: 5px; /* Bordes redondeados en el formulario */
+}
+form button {
+    background-color: #f4d4b7; /* Color del botón */
+    color: #171b25; /* Color del texto del botón */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #f5f3ef; /* Color del botón al pasar el mouse */
+}
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    #countdown {
+        font-size: 1.2em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
